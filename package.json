@@ -1,0 +1,16 @@
+{
+  "name": "s21ripper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "type": "module",
+  "keywords": [],
+  "author": "EnergoStalin",
+  "license": "AGPL-3.0-only",
+  "scripts": {
+    "run": "node src/index.js"
+  },
+  "dependencies": {
+    "playwright": "^1.41.1"
+  }
+}

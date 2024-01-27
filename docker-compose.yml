@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  ripper:
+    build:
+      context: .
+      tags:
+        - s21toolkit/s21ripper:latest
+    environment:
+      BASE_URL: https://edu.21-school.ru/
+      ROOTS_SEPARATOR: \n
+      ROOTS: /app/roots
+    volumes:
+      - ./src:/app/src:ro
+      - ./package.json:/app/package.json:ro
+      - ./roots:/app/roots
+      - $HOME/.s21.mjs:/root/.s21.mjs:ro
