@@ -34,14 +34,12 @@ export async function rip(page, url, visited = new Set()) {
   await page.goto(url)
   visited.add(url.replaceAll('/', ''))
 
-  await new Promise(res => setTimeout(res, 20000))
-
   const links = await Promise.all(
     (await waitForLinks(page)).map(e => 
       e.getAttribute('href')
     )
   )
-  console.log(url)
+  console.log(page.url())
 
   for(const link of links) {
     if(visited.has(link.replaceAll('/', ''))) continue
