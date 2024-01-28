@@ -42,4 +42,5 @@ for(const root of roots) {
   await rip(page, root, visited)
 }
 
+await page.close()
 await browser.close()
