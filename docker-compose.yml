@@ -8,10 +8,15 @@ services:
         - s21toolkit/s21ripper:latest
     environment:
       BASE_URL: https://edu.21-school.ru/
-      VIDEO_OUTPUT: /video # Optional
+      VIDEO_DIR: /video # Optional
       VIDEO_W: 2560 # Optional
       VIDEO_H: 1440 # Optional
       HAR_OUTPUT: /log.har # Optional
+
+      # Instead of .s21.mjs config
+      # EDU_USER:
+      # EDU_PASSWORD:
+
       ROOTS_SEPARATOR: \n
       ROOTS: /app/roots
     volumes:
@@ -25,7 +30,7 @@ services:
         source: $HOME/.s21.mjs
         target: /root/.s21.mjs
         read_only: true
-        
+
       - type: bind
         source: ./outputs/log.har
         target: /log.har
